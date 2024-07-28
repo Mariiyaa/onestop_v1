@@ -35,7 +35,7 @@ function Packages() {
     </div>
     <div className="package-container">
       {packages.map((pkg) => (
-        <div className="package-card" key={pkg.title}>
+       <div className="package-card" key={pkg.title}>
           <h2>{pkg.title}</h2>
           <p className="card-desc">{pkg.description}</p>
           <p className="price">${pkg.price}</p>

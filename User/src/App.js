@@ -1,20 +1,25 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import MissionAndHistory from './components/MissionAndHistory';
-import ServiceCards from './components/ServiceCards';
-import Packages from './components/Packages';
-
+import { Routes, Route } from 'react-router-dom';
+import LandingPage from './LandingPage';
+import AboutUs from './AboutUs';
+import Services from './Services';
+import Testimonials from './Testimonials';
+import Signup from './components/Signup';
 function App() {
   return (
     <div className='landing-page'>
-    <Navbar />
-   <HeroSection />
-   <MissionAndHistory />
-   <ServiceCards />
-   <Packages />
-</div>
-  )
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/Services' element={<Services />} />
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/AboutUs' element={<AboutUs />} />
+        <Route path='/Testimonials' element={<Testimonials />} />
+        <Route path='/Signup' element={<Signup />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
