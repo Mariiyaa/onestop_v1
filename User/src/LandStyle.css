@@ -133,28 +133,24 @@ li:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px;
+    padding: 10px;
+    padding-top: 25px;
+    overflow: hidden;
+    background-color: #f3e7c1;
   }
   
-  .image-container {
-    flex: 1;
-  }
-  
-  .image-container img {
-    
-    height: 500px;
-    
-  }
   
   .content-container {
     flex: 1;
     padding-left: 50px;
-    padding-right: 150px;
+    padding-right: 100px;
   }
   
   .content-container h2 {
-    font-size: 60px;
+    font-size: 40px;
     margin-bottom: 20px;
+    text-align: center;
+    color: #a33a10;
   }
   
   .content-container p {
@@ -162,21 +158,40 @@ li:hover {
     margin-bottom: 30px;
     font-size:large;
   }
+
   
+  .stats img{
+    width:100%;
+    
+    height:350px
+    
+  }
   .stats {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 2px;
+    justify-content:space-evenly ;
+    width:110%;
+   
   }
   
+  
+  
   .stat {
-    flex: 1 0 250px;
+    width: 250px;
+    margin: 20px;
+    border: 1px solid #8f8a8a;
+    padding: 20px;
     text-align: center;
+    flex-wrap: wrap; 
+    justify-content:space-evenly ;
+    background-color:#ccc;
   }
   
   .stat h3 {
-    font-size: 24px;
+    font-size: 30px;
     margin-bottom: 10px;
+    color: #6d5500;
   }
 
 
@@ -185,6 +200,7 @@ li:hover {
   .event-planning-services {
     text-align: center;
     padding: 50px 0;
+    background-color: #e0dfdf;
   }
   
   .event-planning-services h2 {
@@ -205,6 +221,7 @@ li:hover {
     flex-wrap: wrap;
     margin-inline: 50px;
     
+    
   }
   
   .service-card {
@@ -212,10 +229,9 @@ li:hover {
     text-align: center;
     margin-bottom: 30px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #111010;
+    border-radius: 1px;
     transition:all 0.3s ease;
-
     
   }
   .service-card:hover {
@@ -250,8 +266,7 @@ li:hover {
   width:100%;
   margin: 0 auto;
   padding: 50px;
-  background-color: #edc531;
-  color: White;
+  background-color: #f3e7c1;
   }
   .header {
   text-align: center;
@@ -261,23 +276,25 @@ li:hover {
   font-size: 40px;
  }
  .header p {
-  font-size: 25px;
+  padding-top:16px;
+  font-size: 18px;
  }
   .package-container {
     display: flex;
     justify-content: space-around;
     margin-inline: 20px;
-    color:rgb(49, 49, 49);
+    color:rgb(19, 0, 0);
   }
   
   .package-card {
-    background-color:rgb(255, 219, 100);
-    border-radius: 5px;
+    background-color:rgba(211, 122, 39, 0.897);
+    background-image: url("C:\Users\Dell\Desktop\Mariyaa\onestop_v1\User\public\packimg.jpg");
+    border-radius: 1px;
     padding-inline: 40px;
-    padding-top:60px;
+    padding-top:40px;
     width: 30%;
-    height:500px;
-    box-shadow:10px 10px 2px #ae8625;
+    height:480px;
+    box-shadow:5px 5px 2px #13131242;
     transition:all 0.3s ease;
   }
   .package-card:hover {
@@ -299,12 +316,13 @@ li:hover {
   }
   
   .select-btn {
-    background-color:rgb(223, 171, 1);
+    background-color:rgba(245, 216, 174, 0.726);
    border: none;
     font-size: 20px;
-    padding: 10px 20px;
+    padding: 9px 20px;
+    margin-bottom: 25px;
     border-radius: 5px;
-    color:rgb(49, 49, 49);
+    color:rgb(7, 0, 0);
     cursor: pointer;
   }
 
