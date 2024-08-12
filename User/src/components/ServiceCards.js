@@ -2,6 +2,7 @@ import React from 'react'
 import bday from'./images/birthday.png';
 import corp from'./images/corporate.jpg';
 import wed from './images/wedding.jpg';
+import { Link } from 'react-router-dom';
 // const servicesData = [
 //     {
 //       title: 'Wedding Planning',
@@ -33,7 +34,7 @@ function ServiceCards() {
             <h3>Wedding Planning</h3>
             <p>Our wedding planning service ensures your special day is perfect, from venue selection to floral arrangements.</p>   
 
-            <button class="button-style con">Learn More</button>
+            <Link to="/Marriage" className='event-link'><button class="button-style con">Learn More</button></Link>
           </div>
        
 
@@ -42,7 +43,7 @@ function ServiceCards() {
             <h3>Corporate Events</h3>
             <p>We organize professional corporate events, including conferences, seminars, and team-building activities.</p>   
 
-            <button class="button-style con" >Learn More</button>
+            <Link to="/Corporate" className='event-link'><button class="button-style con" >Learn More</button></Link> 
           </div>
 
           <div className="service-card">
@@ -50,7 +51,7 @@ function ServiceCards() {
             <h3>Birthday Parties</h3>
             <p>Make your birthday celebrations memorable with our customized party planning services, tailored to your preferences.</p>   
 
-            <button class="button-style con">Learn More</button>
+            <Link to="/Ceremonies" className='event-link'> <button class="button-style con">Learn More</button></Link>
           </div>
       </div>
     </section>

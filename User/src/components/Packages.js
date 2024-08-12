@@ -6,24 +6,15 @@ function Packages() {
     const packages = [
         {
           title: 'Primary Planning Package',
-          description: 'Ideal for small events and gatherings . Budget friendly !!',
-          price: 500,
-          buttonText: 'Select Basic',
-          onClick: () => console.log('Basic package selected')
+          description: "Ideal for small events and gatherings .offers core services to establish the event's foundation. This package usually includes essential elements like venue selection, guest list management, basic decor, catering, and timeline creation. It's designed for clients seeking fundamental planning assistance without requiring extensive customization or elaborate details.",
         },
         {
           title: 'Premium Planning Package',
-          description: 'Perfect for medium-sized events with added services.',
-          price: 1200,
-          buttonText: 'Select Premium',
-          onClick: () => console.log('Premium package selected')
+          description: 'Perfect for medium-sized events with added services. it offers an elevated level of service, providing clients with exclusive access to top-tier vendors, personalized attention, and comprehensive event management. These packages often include luxury amenities, specialized design concepts, and dedicated concierge support, ensuring a truly unforgettable experience.',
         },
         {
           title: 'Luxury Planning Package',
-          description: 'Comprehensive planning for large, extravagant events.',
-          price: 2500,
-          buttonText: 'Select Luxury',
-          onClick: () => console.log('Luxury package selected')
+          description: "Comprehensive planning for large, extravagant events. it offer an elevated level of service, providing bespoke experiences tailored to the client's desires. From exclusive venue sourcing and world-class catering to exquisite decor and impeccable coordination, these packages ensure every detail is meticulously planned for an unforgettable event.",
         }
       ];
 
@@ -38,8 +29,8 @@ function Packages() {
        <div className="package-card" key={pkg.title}>
           <h2>{pkg.title}</h2>
           <p className="card-desc">{pkg.description}</p>
-          <p className="price">${pkg.price}</p>
-          <button className="select-btn">{`Select ${pkg.title}`}</button>
+         
+          
         </div>
       ))}
     </div>

@@ -1,18 +1,20 @@
 import React from 'react'
-import Navbar from './components/Navbar'
+
 import HeroSection from './components/HeroSection'
 import MissionAndHistory from './components/MissionAndHistory'
 import ServiceCards from './components/ServiceCards'
 import Packages from './components/Packages'
+import TestSlide from './components/TestSlide'
+
 
 function LandingPage() {
   return (
     <div>
-      <Navbar />
       <HeroSection />
       <MissionAndHistory />
       <ServiceCards />
       <Packages />
+      <TestSlide />
     </div>
   )
 }

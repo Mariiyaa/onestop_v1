@@ -2,37 +2,40 @@ import React from 'react';
 import './PopUpSignIn.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios'
+import {toast} from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom';
 
 
+function PopUpSignIn({ isPopupOpen, handleClosePopup,setIsLoggedIn }) {
+  const navigate = useNavigate()
+  const [data, setData] = useState({
+    email:"",
+    password:"",
+  });
+  
 
-function PopUpSignIn({ isPopupOpen, handleClosePopup }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const   
- [rememberMe, setRememberMe] = useState(false);
-  const [errors, setErrors] = useState({});   
-
-
-  const handleSubmit = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    const {email,password}=data 
+    try {
+      const {data} = await axios.post('/',{ email,password})
+      if(data.error) {
+        toast.error(data.error) 
+      }
+        else {
+          setData({})
+          toast.success("you are logged in !!!!!")
+          handleClosePopup();
+          setIsLoggedIn(true);
+      }
+      }
 
-    // Basic validation (add more as needed)
-    const validationErrors = {};
-    if (!email) validationErrors.email = 'Email is required';
-    if (!password) validationErrors.password = 'Password is required';
-    setErrors(validationErrors);   
-
-
-    if (Object.keys(validationErrors).length   
- === 0) {
-      // Perform login logic here
-      console.log('Login with:', email, password, rememberMe);
-      // Clear form fields after successful login
-      setEmail('');
-      setPassword('');
-      setRememberMe(false);
+     catch (error) {
+      
+     }
     }
-  };
+
   return (
     <div>
       {isPopupOpen && (
@@ -41,39 +44,26 @@ function PopUpSignIn({ isPopupOpen, handleClosePopup }) {
             
 
         
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleLogin}>
       <div>
         <label htmlFor="email">Email Address<br/></label>
         <input
           type="email"
           id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}   
+          value={data.email}
+          onChange={(e) => setData({...data,email:e.target.value})}   
 
         />
-        {errors.email && <span className="error">{errors.email}</span>}
       </div>
 
       <div>
-        <label htmlFor="password">Password<br/></label>
+        <label>Password<br/></label>
         <input
           type="password"
           id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={data.password}
+          onChange={(e) => setData({...data,password:e.target.value})}
         />
-        {errors.password && <span className="error">{errors.password}</span>}
-      </div>
-
-      <div>
-        <input
-          type="checkbox"   
-
-          id="rememberMe"
-          checked={rememberMe}
-          onChange={(e) => setRememberMe(e.target.checked)}
-        />
-        <label htmlFor="rememberMe">Remember me</label>
       </div>
 
       <button type="submit">Login</button>   

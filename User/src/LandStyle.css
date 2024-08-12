@@ -27,6 +27,63 @@
 
 }
 
+
+
+.event-click{ 
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border:2px solid transparent;
+  padding : 5px;
+  border-radius: 5px;
+  position: relative;
+  /* top:104px; */
+  justify-content: center;
+  margin-bottom: 0px;
+}
+.event-click:active {
+  border:2px solid #6d5500;
+
+}
+.drop-icon {
+  color:black
+}
+
+
+.dropdown-menu {
+  position: absolute;
+  display: flex;
+  top: 100%;
+  right: 18%;
+  width:450px;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  background-color: rgb(78, 112, 78);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  border-radius:0px 0px 10px 10px ;
+}
+
+.dropdown-item {
+  padding: 20px 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+  gap:5px;
+  color :white;
+}
+.event-link {
+  color:#d8d8d8;
+  text-decoration:none;
+}
+
+.event-icon {
+  width:50px;
+}
+
 .logo {
     height:100%;
     
@@ -47,7 +104,8 @@ li {
   color: rgb(48, 46, 46);
   font-style:normal;
 }
-li:hover {
+li:hover 
+.event-link:active{
   cursor: pointer;
   color :#6d5500;
 }
@@ -87,6 +145,22 @@ li:hover {
 .icon {
   color:#ae8625;
   height: 80%;
+}
+
+.sidebar {
+  position: absolute;
+  top:100%;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  transition: right 0.3s;
+  padding: 20px;
+}
+
+.sidebar.open {
+  right: 0;
 }
 
 /* Hero-section */
@@ -250,8 +324,8 @@ li:hover {
   width:100%;
   margin: 0 auto;
   padding: 50px;
-  background-color: #edc531;
-  color: White;
+  background-color: #ffd6c7;
+  color: rgb(80, 80, 80);
   }
   .header {
   text-align: center;
@@ -271,13 +345,13 @@ li:hover {
   }
   
   .package-card {
-    background-color:rgb(255, 219, 100);
+    background-color:#ffe5dc;
     border-radius: 5px;
     padding-inline: 40px;
     padding-top:60px;
     width: 30%;
     height:500px;
-    box-shadow:10px 10px 2px #ae8625;
+    box-shadow:10px 10px 2px #aa9993;
     transition:all 0.3s ease;
   }
   .package-card:hover {
@@ -289,7 +363,8 @@ li:hover {
   margin-bottom: 20px;
 }
 .card-desc {
-  font-size: 25px;
+  font-size: 22px;
+  font-weight: 400;
   margin-bottom: 20px;
 }
   .price {
@@ -299,7 +374,7 @@ li:hover {
   }
   
   .select-btn {
-    background-color:rgb(223, 171, 1);
+    background-color:rgb(253, 216, 93);
    border: none;
     font-size: 20px;
     padding: 10px 20px;
@@ -312,3 +387,112 @@ li:hover {
     background-color: rgb(177, 134, 25);
     top:1px;
   }
+
+
+  /* Testimonial-section */
+
+  .testimonials-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #ffe5dc;
+  }
+  .testimonials-section h2 {
+    font-weight: 400;
+    font-size: 30px;
+    color: rgb(46, 46, 46);
+  }
+
+  .testimonies {
+
+    padding-inline:30%;
+    width:100%;
+    height:400px;
+    justify-content: center;
+  }
+  
+  .testimonial-card {
+    background-color: #f8f7cd;
+    color: rgb(95, 81, 0);
+    border-radius: 8px;
+    padding: 40px;
+    height:350px;
+    margin-block: 25px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonial-stars {
+    color: #FFD700; /* Gold color for stars */
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial-text {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .author-name {
+    font-weight: bold;
+    font-style: italic;
+    padding-left:10px;
+    font-size:x-large;
+  }
+  
+  .author-title {
+    font-size: 1.2rem;
+    color: #bbb;
+  }
+
+  /* Footer */
+
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer h2 {
+    margin-bottom: 10px;
+  }
+  
+  .footer p {
+    margin: 5px 0;
+  }
+  
+  .footer-links {
+    margin: 20px 0;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-social a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .footer-social a:hover {
+    text-decoration: underline;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
