@@ -14,6 +14,8 @@ import Corporate from './pages/Corporate'
 import Cultural from './pages/Cultural';
 import Ceremonies from './pages/Ceremonies';
 import ChatbotWidget from './chatbotWidget';
+import BlogContent from './BlogContent';
+
 
 
 axios.defaults.baseURL = "http://localhost:8000"
@@ -36,6 +38,7 @@ function App() {
         <Route path="/Corporate" element={<Corporate />} />
         <Route path="/Cultural" element={<Cultural />} />
         <Route path="/Ceremonies" element={<Ceremonies />} />
+        <Route path="/blog/:id" element={<BlogContent />} />
         
       </Routes>
       <ChatbotWidget />

@@ -2,7 +2,7 @@ const express =require('express');
 const router = express.Router();
 const cors=require('cors');
 const { test,registerUser,loginUser } = require('../controllers/authControllers')
-
+const {chatbot} = require("../controllers/chatbot")
 //middleware
 router.use (
     cors(
@@ -16,5 +16,6 @@ router.use (
 
 router.post('/Signup',registerUser)
 router.post('/',loginUser)
+router.post('/chat',chatbot)
 console.log("post is working !!!!!")
 module.exports = router

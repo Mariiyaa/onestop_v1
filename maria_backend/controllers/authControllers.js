@@ -82,6 +82,42 @@ const registerUser = async (req,res) => {
         }
     }
 
+    // const updateUserProfile = asyncHandler(async (req, res) => {
+    //     const user = await User.findById(req.user._id);
+    
+    //     if (user) {
+    //         user.name = req.body.name || user.name;
+    //         user.email = req.body.email || user.email;
+    //         if (req.body.password) {
+    //             user.password = req.body.password;
+    //         }
+    
+    //         const updatedUser = await user.save();
+    
+    //         res.json({
+    //             _id: updatedUser._id,
+    //             name: updatedUser.name,
+    //             email: updatedUser.email,
+    //             token: generateToken(updatedUser._id),
+    //         });
+    //     } else {
+    //         res.status(404);
+    //         throw new Error('User not found');
+    //     }
+    // });
+    
+    // // @desc    Delete user account
+    // // @route   DELETE /api/users/delete
+    // // @access  Private
+    // const deleteUser = asyncHandler(async (req, res) => {
+    //     const user = await User.findById(req.user._id);
+    //     if (!user) {
+    //         res.status(404);
+    //         throw new Error('User not found');
+    //     }
+    //     await User.deleteOne({ _id: req.user._id });
+    //     res.status(200).json({ message: 'User deleted successfully' });
+    // });
 
 
 
@@ -89,4 +125,7 @@ module.exports = {
     test,
     registerUser,
     loginUser,
+    // updateUserProfile,
+    // deleteUser
+
 }
