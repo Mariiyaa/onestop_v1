@@ -22,6 +22,7 @@ axios.defaults.baseURL = "http://localhost:8000"
 axios.defaults.withCredentials = true
 
 
+
 function App() {
   return (
     <div className='landing-page'>
@@ -32,14 +33,14 @@ function App() {
         <Route path='/Services' element={<Services />} />
         <Route path='/' element={<LandingPage />} />
         <Route path='/AboutUs' element={<AboutUs />} />
+        <Route path="/Signup" element={<Signup />} />
         <Route path='/Testimonials' element={<Testimonials />} />
-        <Route path='/Signup' element={<Signup />} />
+      
         <Route path="/Marriage" element={<Marriage />} />
         <Route path="/Corporate" element={<Corporate />} />
         <Route path="/Cultural" element={<Cultural />} />
         <Route path="/Ceremonies" element={<Ceremonies />} />
         <Route path="/blog/:id" element={<BlogContent />} />
-        
       </Routes>
       <ChatbotWidget />
       <Footer />

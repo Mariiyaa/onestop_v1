@@ -1,14 +1,13 @@
 import React from 'react';
 import './PopUpSignIn.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import axios from 'axios'
 import {toast} from 'react-hot-toast'
-import { useNavigate } from 'react-router-dom';
+
 
 
 function PopUpSignIn({ isPopupOpen, handleClosePopup,setIsLoggedIn }) {
-  const navigate = useNavigate()
   const [data, setData] = useState({
     email:"",
     password:"",
@@ -71,7 +70,9 @@ function PopUpSignIn({ isPopupOpen, handleClosePopup,setIsLoggedIn }) {
 
       <div className="signup">
         <span>Don't have an account?</span>
-        <Link to="/Signup">Signup Now?</Link>
+        <a href="/Signup">Signup Now?</a>
+
+
       </div>
     </form>
           

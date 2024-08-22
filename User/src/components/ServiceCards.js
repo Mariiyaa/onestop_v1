@@ -29,7 +29,7 @@ function ServiceCards() {
       <p>OneStop Events offers a range of event planning services to make your special occasions unforgettable. From basic planning to luxury packages, we have something for every need. Our team ensures every detail is perfect, so you can enjoy your event stress-free.</p>
       <div className="service-cards">
         
-          <div className="service-card">
+          <div className="service-card-l">
             <img src={wed} alt="wedding" />
             <h3>Wedding Planning</h3>
             <p>Our wedding planning service ensures your special day is perfect, from venue selection to floral arrangements.</p>   
@@ -38,7 +38,7 @@ function ServiceCards() {
           </div>
        
 
-          <div className="service-card">
+          <div className="service-card-l">
             <img src={corp} alt="corparate" />
             <h3>Corporate Events</h3>
             <p>We organize professional corporate events, including conferences, seminars, and team-building activities.</p>   
@@ -46,7 +46,7 @@ function ServiceCards() {
             <Link to="/Corporate" className='event-link'><button class="button-style con" >Learn More</button></Link> 
           </div>
 
-          <div className="service-card">
+          <div className="service-card-l">
             <img src={bday} alt="birthday" />
             <h3>Birthday Parties</h3>
             <p>Make your birthday celebrations memorable with our customized party planning services, tailored to your preferences.</p>   
