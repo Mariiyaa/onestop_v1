@@ -35,6 +35,12 @@ const Services = () => {
         description: 'Professional Makeup Artist and large Collection of rental customes.',
         image: 'clothes.jpg',
       },
+      {
+        id: 6,
+        title: 'making and customising invitations',
+        description: 'We ensure every guest feels valued with our tailored invitation service, adding a personal touch to your event.',
+        image: 'invitation.jpeg',
+      },
     ];
   
     return (
@@ -50,7 +56,7 @@ const Services = () => {
         <div className="services-list">
           {servicesData.map((service) => (
             <div className="service-card" key={service.id}>
-              <img src={service.image} alt={service.title} />
+              <img src={service.image} alt={service.title} className="service-img" />
               <h2>{service.title}</h2>
               <p>{service.description}</p>
              
@@ -58,7 +64,7 @@ const Services = () => {
           ))}
           
         </div>
-        <button placeholder="EXPLORE MORE">Explore More</button>
+        <button placeholder="EXPLORE MORE"> And many more ...</button>
       </div>
     );
   };

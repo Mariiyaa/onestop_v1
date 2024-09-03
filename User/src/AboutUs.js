@@ -41,7 +41,9 @@ function AboutUs() {
             <p>
 
 
-            <img src="mail.png" alt="About Us Image" /><img src="call.png" alt="About Us Image" /><img src="insta.png" alt="About Us Image" />
+            <a href="mailto:oneStopEventsTeam11@gmail.com" ><img src="mail.png" alt="About Us Image" /></a>
+            <a href="tel:+917676123456"><img src="call.png" alt="About Us Image" /></a>
+            <img src="insta.png" alt="About Us Image" />
 
           </p>
         </div>

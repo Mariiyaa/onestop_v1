@@ -2,7 +2,8 @@ const express = require('express');
 const dotenv = require('dotenv').config()
 const cors =require('cors')
 const mongoose = require ('mongoose')
-
+const packageRoutes = require('./routes/packageRoutes');
+const reviewRoutes = require('./routes/reviewRoutes');
 
 const app=express();
 
@@ -17,6 +18,8 @@ mongoose.connect(process.env.MONGO_URI)
 try {
 app.use(express.json())
 app.use('/',require('./routes/authRoutes'))
+app.use('/api/packages', packageRoutes);
+app.use('/api/reviews', reviewRoutes);
 console.log("connected sucessfully")
 }
 catch (e) {

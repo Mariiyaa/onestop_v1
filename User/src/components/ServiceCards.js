@@ -34,7 +34,7 @@ function ServiceCards() {
             <h3>Wedding Planning</h3>
             <p>Our wedding planning service ensures your special day is perfect, from venue selection to floral arrangements.</p>   
 
-            <Link to="/Marriage" className='event-link'><button class="button-style con">Learn More</button></Link>
+            <Link to="packages/Wedding" className='event-link'><button class="button-style con">Learn More</button></Link>
           </div>
        
 
@@ -43,7 +43,7 @@ function ServiceCards() {
             <h3>Corporate Events</h3>
             <p>We organize professional corporate events, including conferences, seminars, and team-building activities.</p>   
 
-            <Link to="/Corporate" className='event-link'><button class="button-style con" >Learn More</button></Link> 
+            <Link to="packages/Corporate" className='event-link'><button class="button-style con" >Learn More</button></Link> 
           </div>
 
           <div className="service-card-l">
@@ -51,7 +51,7 @@ function ServiceCards() {
             <h3>Birthday Parties</h3>
             <p>Make your birthday celebrations memorable with our customized party planning services, tailored to your preferences.</p>   
 
-            <Link to="/Ceremonies" className='event-link'> <button class="button-style con">Learn More</button></Link>
+            <Link to="packages/Milestones" className='event-link'> <button class="button-style con">Learn More</button></Link>
           </div>
       </div>
     </section>

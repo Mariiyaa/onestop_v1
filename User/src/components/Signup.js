@@ -40,9 +40,10 @@ function Signup() {
   return (
     <div>
        <div className='Sign-up'>
-      <h1>SignUp</h1>
-      <form onSubmit={handleSubmit}>
       
+      <form onSubmit={handleSubmit}>
+      <h1>Sign up </h1>
+      <p>"Crafting Memories, One Event at a Time."</p>
       <label>Name<br/></label>
         <input
           type="text"
@@ -62,7 +63,7 @@ function Signup() {
 
 
       <div>
-        <label>Create Password<br/></label>
+        <label className='create-pass'>Create Password<br/></label>
         <input
           type="password"
           id="password"
@@ -71,7 +72,15 @@ function Signup() {
         />
       </div>
 
-      <button type="submit">Sign Up</button>   
+      <button type="submit">Sign up</button>   
+      <div className='pass-cond'>
+        password:
+        <li>Require a minimum of 8 characters</li>
+        <li>Include at least one uppercase letter (A-Z)</li>
+        <li>Include at least one lowercase letter (a-z).</li>
+        <li>Include at least one numeric digit (0-9).</li>
+
+      </div>
 
     </form>
       </div>

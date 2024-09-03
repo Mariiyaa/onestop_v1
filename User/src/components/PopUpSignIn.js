@@ -7,7 +7,7 @@ import {toast} from 'react-hot-toast'
 
 
 
-function PopUpSignIn({ isPopupOpen, handleClosePopup,setIsLoggedIn }) {
+function PopUpSignIn({ isPopupOpen, handleClosePopup,setIsLoggedIn, setEmail }) {
   const [data, setData] = useState({
     email:"",
     password:"",
@@ -23,7 +23,9 @@ function PopUpSignIn({ isPopupOpen, handleClosePopup,setIsLoggedIn }) {
         toast.error(data.error) 
       }
         else {
+          setEmail(email);
           setData({})
+          
           toast.success("you are logged in !!!!!")
           handleClosePopup();
           setIsLoggedIn(true);
@@ -44,6 +46,7 @@ function PopUpSignIn({ isPopupOpen, handleClosePopup,setIsLoggedIn }) {
 
         
           <form onSubmit={handleLogin}>
+            <h1>Log in</h1>
       <div>
         <label htmlFor="email">Email Address<br/></label>
         <input

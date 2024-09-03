@@ -58,8 +58,9 @@ const ChatbotWidget = () => {
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             placeholder="Type your message..."
+                            className="chatbot-input"
                         />
-                        <button type="submit" disabled={isSending}>Send</button>
+                        <button type="submit" disabled={isSending} onSubmit={handleSubmit}>Send</button>
                     </form>
                 </div>
             )}

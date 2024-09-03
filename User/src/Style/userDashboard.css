@@ -1,0 +1,65 @@
+.sidebar {
+  position: absolute; 
+  top:100%;
+  right: -400px;
+  background-color:#fad980dc;
+  border-radius:0px 0px 0px 10px ;
+  width: 400px;
+  height: auto;
+  /* transition: right 0.3s; */
+  padding: 20px;
+
+  }
+  
+  .sidebar.open {
+  position: absolute;
+  top:100%;
+  right: 0;
+  height: auto;
+  background-color:#fad980ee;
+  border-radius:0px 0px 0px 10px ;
+  width: 400px;
+  padding: 20px;
+
+  }
+
+.dash-logo-div {
+  display:flex;
+  justify-content: center;
+}
+.dash-logo{
+  height: 100px;
+  justify-content: center;
+}
+
+.name {
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.welcome {
+  font-size: 40px;
+  font-weight: 100;
+  color : white;
+}
+.sidebar ul {
+  list-style: none;
+  padding:0;
+}
+
+.sidebar li {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: white;
+  cursor: pointer;
+
+}
+
+.sidebar li:hover {
+  background-color: #d4af37;
+}
+
+
+

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 import './Style/BlogPage.css'; // Import your CSS file
 
 const blogPosts = [
@@ -62,6 +64,7 @@ const blogPosts = [
   },
 ];
 
+
 const Testimonials = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -84,10 +87,45 @@ const Testimonials = () => {
 };
 
 const Banner = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
+  const bannerImage = [
+    {
+      image: "blog-corporate.jpeg",
+      alt:"corporate image",
+    },
+    {
+      image: "blog-cultural.jpg",
+      alt:"cultural image",
+    },
+    {
+      image: "blog-wedding.jpeg",
+      alt: "wedding image",
+    },
+    {
+      image: "blog-milestone.jpg",
+      alt: "milestone image",
+    },
+  
+  ]
   return (
     <div className="banner">
-      {/* Your banner image */}
-      Inspire your next event.
+  <Slider {...settings}>
+        {bannerImage.map((bannerImage, index) => (
+          <div key={index} className='slider'>
+              <div>
+                <img  src={bannerImage.image} className="banner" alt={bannerImage.alt} />
+              </div>
+              </div>
+        ))}
+      </Slider>
     </div>
   );
 };

@@ -18,7 +18,11 @@
       
       font-size: 50px;
   }
-
+.service-img {
+  width: 100%;
+  height: 60%;
+  margin-bottom: 20px;
+}
   .services-list {
     display: flex;
     flex-wrap: wrap;
@@ -26,7 +30,8 @@
   }
   
   .service-card {
-    width: 300px;
+    width: 500px;
+    height:500px;
     margin: 20px;
     border: 1px solid #f5eeee;
     padding: 20px;
@@ -34,6 +39,12 @@
     background-color: aliceblue;
   }
   
+  .service-card h2 {
+    font-size:28px;
+  }
+  .service-card p {
+    font-size : 20px
+  }
   /* Add more styles as needed */
   .services-container button{
     
@@ -42,7 +53,7 @@
     border-radius: 12px;
     justify-content: center;
     text-align: center;
-    width:100px;
+    width:200px;
     height:40px;
     background-color: white ;
     box-sizing: content-box;
