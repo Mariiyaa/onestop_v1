@@ -1,0 +1,30 @@
+.next-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa; /* Light background for contrast */
+    font-family: 'Poppins', sans-serif; /* Ensure the same font as used elsewhere */
+  }
+  
+  .agent-introduction {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .agent-message {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    max-width: 600px; /* Limit the width for better readability */
+    margin-bottom: 20px;
+  }
+  
+  .whatsapp-icon {
+    display: inline-block; /* Ensure the icon aligns correctly */
+    margin-top: 20px; /* Add some space above the icon */
+  }
+  

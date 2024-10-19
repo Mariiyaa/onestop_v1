@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Tabs, Tab, Modal, Button, Card, Form } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom';
 import './PackageDetails.css';
-import { ToastContainer, toast } from 'react-toastify';
+
 
 function PackageDetails() {
     const { id } = useParams(); // package _id
@@ -15,6 +15,8 @@ function PackageDetails() {
     const [showModal, setShowModal] = useState(false);
     const [selectedPreferences, setSelectedPreferences] = useState({});
     const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
+
+
 
     useEffect(() => {
         const fetchPackageDetails = async () => {
@@ -115,7 +117,7 @@ function PackageDetails() {
             }
         } 
         if(!isSelectionValid) {
-            toast.error('Please select exactly 2 preferences before proceeding.');
+            alert('Please select exactly 2 preferences before proceeding.');
         }
     };
 
@@ -226,7 +228,7 @@ function PackageDetails() {
             </Tabs>
             <Modal show={showModal} onHide={handleCloseModal} size="lg">
                 <Modal.Header closeButton>
-                    <Modal.Title>Select Your Preferences</Modal.Title>
+                    <Modal.Title >Select Any 2 Preferences</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     {renderServiceSections()}

@@ -1,5 +1,6 @@
 
 const User = require('../Models/User')
+const Agent = require('../models/AgentModel');
 const {hashPassword,comparePasswords} = require('../Helpers/auth')
 const test = (req,res) => {
     res.json('test is working')
@@ -77,6 +78,104 @@ const registerUser = async (req,res) => {
     }
 
 
+    const registerAgent = async (req,res) => {
+        try {
+            const {name,email,phoneNo,password} =req.body;
+                    //check if name feild is not empty
+                    if(!name) {
+                        return res.json ({
+                            error: "please enter your name"
+                        })  
+                    }
+    
+                   //check email 
+                   //check if name field is not empty
+                   if(!email) {
+                    return res.json ({
+                        error: "please enter your email"
+                    })  
+                }
+                   const exist = await Agent.findOne({email});
+                   if(exist) {
+                       return res.json ({
+                           error: "email already exists"
+                       })
+                   }
+
+
+                   if(!phoneNo) {
+                    return res.json ({
+                        error: "please enter your email"
+                    })  
+                }
+
+
+                   //check if name field is not empty
+                   if(!password) {
+                    return res.json ({
+                        error: "please enter your password"
+                    })  
+                }
+    
+    
+                if (password.length < 8) {
+                    return res.json({
+                        error: "Password must be at least 8 characters long."
+                    });
+                }
+    
+                if (!/[A-Z]/.test(password)) {
+                    return res.json({
+                        error: "Password must contain at least one uppercase letter (A-Z)."
+                    });
+                }
+    
+                if (!/[a-z]/.test(password)) {
+                    return res.json({
+                        error: "Password must contain at least one lowercase letter (a-z)."
+                    });
+                }
+    
+                if (!/[0-9]/.test(password)) {
+                    return res.json({
+                        error: "Password must contain at least one numeric digit (0-9)."
+                    });
+                }
+                const lastAgent = await Agent.findOne().sort({ agent_id: -1 });
+
+                let newAgentId;
+                
+                // Check if there are any existing agents
+                if (lastAgent) {
+                    // Extract the numeric part of the last agent_id (e.g., "A001" -> 1)
+                    const lastAgentNumber = parseInt(lastAgent.agent_id.slice(1), 10);
+                    // Increment by 1 to create the new agent_id
+                    const nextAgentNumber = lastAgentNumber + 1;
+                    // Format the new agent_id (e.g., "A002")
+                    newAgentId = `A${nextAgentNumber.toString().padStart(3, '0')}`;
+                } else {
+                    // If no agents exist, start with A001
+                    newAgentId = "A001";
+                }
+                
+                 const Newagent = await Agent.create({
+                   agent_id : newAgentId,
+                   name,
+                   email,
+                   phone_number:phoneNo,
+                   status:"free",
+                   password,
+                 });
+                 return res.json(Newagent) 
+                 console.log(Newagent)   
+        }
+         catch (error) {
+     
+                console.log("error in authControllers.js",error);
+            }
+        }
+    
+
 // Login 
     const loginUser = async (req,res) => {
         try {
@@ -111,6 +210,47 @@ const registerUser = async (req,res) => {
             console.log(error)
         }
     }
+
+
+
+    const LoginAgent = async (req,res) => {
+        try {
+            const {email,password}= req.body;
+            console.log("Email received:", email);
+
+            // check user exists 
+            const agent = await Agent.findOne({email});
+            if(!agent)  {
+                console.log("User not found for email:", email);
+                return res.json ({
+                    error: "User does not exist .please Sign up"
+                }) 
+            }
+
+            // check password 
+            
+              if (password===agent.password) {
+                console.log("Password is correct for email:", email);
+                // res.json ("password is correct ")
+                res.json({ name: agent.name });
+                console.log(`${agent.name}`)
+                }
+                else{
+                    console.log("Wrong password for email:", email);
+                return res.json ({
+                    error: "wrong password !!!!"
+                }) 
+            }
+           
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
+
+
+
 
 const Dashboard = async (req, res) => {
         try {
@@ -180,6 +320,7 @@ module.exports = {
     Dashboard,
     DeleteUser,
     updateUserProfile,
-    // deleteUser
+    registerAgent,
+    LoginAgent,
 
 }

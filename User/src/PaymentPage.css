@@ -1,13 +1,55 @@
-/* PaymentPage.css */
-.container {
-   
-    margin: 0 auto;
+/* styles.css */
+
+.booking-container {
+    width: 50%;
+    height:30%; /* Set a maximum width for the container */
+    margin: auto auto; /* Center the container */
+    padding: 20px; /* Add some padding */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #f9f9f9; /* Light background color */
+}
+.payment {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.booking-title {
+    font-size: 40px; /* Font size for the main title */
+    color: #333; /* Dark text color */
+    margin-bottom: 10px; /* Space below the heading */
 }
 
-h3 {
-    margin-bottom: 20px;
+.package-name {
+    font-size: 30px; /* Font size for the package name */
+    color: #555; /* Slightly lighter text color */
+    margin: 10px 0; /* Space above and below the package name */
 }
 
-.form-control {
-    margin-bottom: 15px;
+.amount {
+    font-size: 28px; /* Font size for the amount */
+    color: #000; /* Black text color for visibility */
+    margin: 10px 0; /* Space above and below the amount */
+}
+
+.pay-button {
+    background-color: #007bff; /* Primary color for the button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size for the button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.pay-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.pay-button:disabled {
+    background-color: #ccc; /* Gray background for disabled button */
+    cursor: not-allowed; /* Not-allowed cursor for disabled state */
 }

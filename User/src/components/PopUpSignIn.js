@@ -1,87 +1,62 @@
 import React from 'react';
 import './PopUpSignIn.css';
-import { useState } from 'react';
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
+import { useData } from '../UserData';
 
-import axios from 'axios'
-import {toast} from 'react-hot-toast'
-
-
-
-function PopUpSignIn({ isPopupOpen, handleClosePopup,setIsLoggedIn, setEmail }) {
-  const [data, setData] = useState({
-    email:"",
-    password:"",
-  });
-  
+function PopUpSignIn({ isPopupOpen, handleClosePopup, setIsLoggedIn }) {
+  const { Data, setData } = useData(); // Ensure you call useData()
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const {email,password}=data 
+    const { email, password } = Data;
     try {
-      const {data} = await axios.post('/',{ email,password})
-      if(data.error) {
-        toast.error(data.error) 
+      const response = await axios.post('/', { email, password });
+      if (response.data.error) {
+        toast.error(response.data.error);
+      } else {
+        setData({ ...Data, ...response.data }); // Update state with response data
+        toast.success("You are logged in!");
+        handleClosePopup();
+        setIsLoggedIn(true);
       }
-        else {
-          setEmail(email);
-          setData({})
-          
-          toast.success("you are logged in !!!!!")
-          handleClosePopup();
-          setIsLoggedIn(true);
-      }
-      }
-
-     catch (error) {
-      
-     }
+    } catch (error) {
+      console.error(error);
+      toast.error("An error occurred during login.");
     }
+  };
 
   return (
     <div>
       {isPopupOpen && (
         <div className="popup-overlay">
           <div className="popup">
-            
-
-        
-          <form onSubmit={handleLogin}>
-            <h1>Log in</h1>
-      <div>
-        <label htmlFor="email">Email Address<br/></label>
-        <input
-          type="email"
-          id="email"
-          value={data.email}
-          onChange={(e) => setData({...data,email:e.target.value})}   
-
-        />
-      </div>
-
-      <div>
-        <label>Password<br/></label>
-        <input
-          type="password"
-          id="password"
-          value={data.password}
-          onChange={(e) => setData({...data,password:e.target.value})}
-        />
-      </div>
-
-      <button type="submit">Login</button>   
-
-
-      <div className="signup">
-        <span>Don't have an account?</span>
-        <a href="/Signup">Signup Now?</a>
-
-
-      </div>
-    </form>
-          
-
-
-
+            <form onSubmit={handleLogin}>
+              <h1>Log in</h1>
+              <div>
+                <label htmlFor="email">Email Address<br /></label>
+                <input
+                  type="email"
+                  id="email"
+                  value={Data.email}
+                  onChange={(e) => setData({ ...Data, email: e.target.value })}
+                />
+              </div>
+              <div>
+                <label>Password<br /></label>
+                <input
+                  type="password"
+                  id="password"
+                  value={Data.password}
+                  onChange={(e) => setData({ ...Data, password: e.target.value })}
+                />
+              </div>
+              <button type="submit">Login</button>
+              <div className="signup">
+                <span>Don't have an account?</span>
+                <a href="/Signup">Signup Now?</a>
+              </div>
+            </form>
             <button onClick={handleClosePopup} className='close'>Close</button>
           </div>
         </div>

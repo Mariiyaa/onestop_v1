@@ -60,6 +60,6 @@
 .sidebar li:hover {
   background-color: #d4af37;
 }
-
-
-
+a {
+  text-decoration: none;
+}

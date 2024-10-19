@@ -1,0 +1,112 @@
+/* Import a stylish Google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0f1f38; /* Dark background color */
+  font-family: 'Poppins', sans-serif;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #27aa46; /* This should make the circle green */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: zoomIn 0.5s ease-out;
+}
+
+.tick-mark {
+  font-size: 80px;
+  color: white;
+}
+
+.payment-success-text {
+  margin-top: 20px;
+  font-size: 32px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Add animated stars and lines */
+.animated-elements {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.star, .line {
+  position: absolute;
+  background-color: #28a745;
+  opacity: 0;
+  animation: burst 1s ease-out forwards;
+}
+
+.star {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.star1 {
+  top: -40px;
+  left: -50px;
+  animation-delay: 0.2s;
+}
+
+.star2 {
+  top: 40px;
+  left: 50px;
+  animation-delay: 0.3s;
+}
+
+.line {
+  width: 2px;
+  height: 50px;
+  background-color: #28a745;
+}
+
+.line1 {
+  top: -30px;
+  left: 30px;
+  transform: rotate(45deg);
+  animation-delay: 0.4s;
+}
+
+.line2 {
+  top: 30px;
+  left: -30px;
+  transform: rotate(-45deg);
+  animation-delay: 0.5s;
+}
+
+/* Animations */
+@keyframes burst {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,19 +1,20 @@
 const express =require('express');
 const router = express.Router();
 const cors=require('cors');
-const { test,registerUser,loginUser,Dashboard,DeleteUser,updateUserProfile } = require('../controllers/authControllers')
+const { test,registerUser,loginUser,Dashboard,DeleteUser,updateUserProfile,registerAgent,LoginAgent } = require('../controllers/authControllers')
 const {chatbot} = require("../controllers/chatbot")
 //middleware
 router.use (
     cors(
         {
            credentials:true ,
-           origin : "http://localhost:3000"
+           origin : ['http://localhost:3000', 'http://localhost:5000']
         }
     )
 )
 
-
+router.post('/SignupAgent',registerAgent)
+router.post('/LoginAgent',LoginAgent)
 router.post('/Signup',registerUser)
 router.post('/',loginUser)
 router.get('/:email',Dashboard)

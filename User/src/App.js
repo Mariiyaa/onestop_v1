@@ -14,12 +14,15 @@ import { Toaster} from 'react-hot-toast'
 import Footer from './components/Footer';
 import ChatbotWidget from './chatbotWidget';
 import BlogContent from './BlogContent';
-
+import NextPage from './NextPage'
 import PackagesList from './PackagesList';
-
+import {UserData} from './UserData'
 import PackageDetails from './PackageDetails';
 import BookingSummary from './BookingSummary';
-import PaymentPage from './PaymentPage';
+import Payment from './Payment';
+import YourBooking from './pages/YourBooking';
+import Tracking from './pages/Tracking';
+import PaymentSuccess from './PaymentSucess';
 
 
 
@@ -51,7 +54,7 @@ function App() {
   return (
     <div className='landing-page'>
       
-      
+      <UserData>  
       <div style={{ padding: '20px' }}>
                 <Navbar onSelectCategory={handleCategorySelect} />
             </div>
@@ -64,12 +67,17 @@ function App() {
         <Route path='/AboutUs' element={<AboutUs />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path='/Testimonials' element={<Testimonials />} />
+        <Route path='/Tracking' element={<Tracking />} />
+        <Route path='/Booking' element={<YourBooking />} />
         <Route path="/packages/:category" element={<PackagesList category={selectedCategory} />} />
         <Route path="/packages/details/:id" element={<PackageDetails />} />
         <Route path="/booking-summary" element={<BookingSummary />} />
-        <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/payment" element={<Payment />} />
         <Route path="/blog/:id" element={<BlogContent />} />
+        <Route path="/success" element={<PaymentSuccess />} />
+        <Route path="/next-page" element={<NextPage />} />
       </Routes>
+      </UserData>
       <ChatbotWidget />
       <Footer />
     </div>

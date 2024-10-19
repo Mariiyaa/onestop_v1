@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+
 //import './PackagesList.css'
 
 
 const PackagesList = () => {
     const [packages, setPackages] = useState([]);
     const { category } = useParams();
+
 
     const catalog= {
          textAlign: 'start',
@@ -80,6 +82,7 @@ const { catalog_1,catalog_2,catalog_3,catalog_4,catalog_5,catalog_6, description
 
         fetchPackages();
     }, [category]);
+
 
     return (
         <Container className="mt-4">
