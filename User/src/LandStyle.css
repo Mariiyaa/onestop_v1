@@ -380,7 +380,7 @@ font-size: 18px;
   background-color:#ffe5dc;
   border-radius: 5px;
   background-color:rgba(211, 122, 39, 0.897);
-  background-image: url(".\OneStopv1\OneStop\User\public\packimg.jpg");
+  background-image: url("/packimg.jpg");
   border-radius: 1px;
   padding-inline: 40px;
   padding-top:40px;
