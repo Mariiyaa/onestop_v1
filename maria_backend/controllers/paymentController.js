@@ -1,4 +1,4 @@
-const stripe = require('stripe')('sk_test_51PhB4JA4YDBsTrPZrPWTuHlbVbkLMblMpv27HDCK9g11nhYyyreUhu9X1yWafZRU8tJC1vItngshMC8F6Bff5Q8R00h8YHyby2');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const { addBookingData }=require('../Models/bookingDataStore')
 
