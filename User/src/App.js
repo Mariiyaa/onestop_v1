@@ -39,7 +39,7 @@ function App() {
       setSelectedCategory(category);
       navigate(`/packages/${category}`);
   };
-  fetch('http://localhost:8000/api', {
+  fetch('https://onestop-v1.onrender.com/api', {
       method: 'GET',
       credentials: 'include',  // Important if you are sending cookies or authentication headers
       headers: {
