@@ -1,6 +1,6 @@
 const mongoose=require("mongoose")
 const Order = require('../Models/OrderModel');
-const Agent = require('../models/AgentModel');
+const Agent = require('../Models/AgentModel');
 const { getBookingData, removeBookingData }=require("../Models/bookingDataStore")
 const postOrderDetails = async (req, res) => {
     const { bookingData } = req.body;
