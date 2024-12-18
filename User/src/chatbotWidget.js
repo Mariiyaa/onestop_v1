@@ -21,7 +21,7 @@ const ChatbotWidget = () => {
         setIsSending(true); // Indicate sending process
 
         try {
-            const response = await axios.post('http://localhost:8000/chat', { message: input });
+            const response = await axios.post('https://onestop-v1.onrender.com/chat', { message: input });
             const botMessage = { sender: 'bot', text: response.data.reply };
             setMessages(prevMessages => [...prevMessages, botMessage]); // Add bot's response
         } catch (error) {
